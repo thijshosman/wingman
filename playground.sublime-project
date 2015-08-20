@@ -1,0 +1,41 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd": "python -u $file",
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "python 2.7 dev conda ",
+			"shell": true
+		},
+		{
+			"cmd": "activate py3k && python -u $file",
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "python 3.4 dev conda ",
+			"shell": true
+		},
+		{
+			"cmd":
+			[
+				"source ~/Developer/virtualenv/dev/bin/activate && python -u $file"
+			],
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "python 2.7 dev venv ",
+			"shell": true
+		},
+		{
+			"cmd":
+			[
+				"source ~/Developer/virtualenv/p3env/bin/activate && python -u $file"
+			],
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "python 3.4 dev venv ",
+			"shell": true
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "python -u \"$file\""
+		}
+	]
+}
